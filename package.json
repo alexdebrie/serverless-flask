@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "node postinstall.js",
+    "setup": "npm install",
+    "postsetup": "node postsetup.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "chalk": "^2.1.0",
     "inquirer": "^3.2.3",
     "js-yaml": "^3.9.1",
     "serverless-python-requirements": "^2.5.0",

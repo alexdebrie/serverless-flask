@@ -7,7 +7,7 @@ The fastest way to a Flask application with [Serverless](https://github.com/serv
 ```
 $ npm install -g serverless
 $ serverless install --url https://github.com/alexdebrie/serverless-flask --name my-flask-app
-$ cd my-flask-app && npm install
+$ cd my-flask-app && npm run setup
 $ serverless deploy
 ```
 

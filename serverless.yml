@@ -1,25 +1,21 @@
 service: serverless-flask
-
 plugins:
-- serverless-python-requirements
-- serverless-wsgi
-
+  - serverless-python-requirements
+  - serverless-wsgi
 custom:
   wsgi:
     app: app.app
     packRequirements: false
   pythonRequirements:
     dockerizePip: true
-
 provider:
   name: aws
-  runtime: python3.6
+  runtime: python2.7
   stage: dev
   region: us-east-1
-
 functions:
   app:
     handler: wsgi.handler
     events:
       - http: ANY /
-      - http: ANY {proxy+}
+      - http: 'ANY {proxy+}'
