@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="section hero">
+    <div class="container">
+      <div class="row">
+        <div class="one-half column">
+          <h4 class="hero-heading">Welcome to Serverless.</h4>
+          <h5><em>The way cloud should be.</h5>
+          <div class="docs-example row">
+            <h5><strong>Help me to:</strong></h5>
+            <div class="twelve columns">
+              <ul>
+                <li><a href="https://serverless.com">Set my custom domain</a></li>
+                <li><a href="https://serverless.com">Add a DynamoDB table</a></li>
+                <li><a href="https://serverless.com">Pass secret variables</a></li>
+              </ul>
+            </div>
+          </div>
+          <a class="button button-primary" href="https://serverless.com/framework/docs/providers/aws/">
+            Serverless Docs
+          </a>
+          <a class="button button-secondary" href="https://github.com/alexdebrie/serverless-flask">
+            Serverless-Flask Repo
+          </a>
+        </div>
+        <div class="one-half column phones">
+          <a href="https://imgflip.com/i/1v24a9"><img src="https://i.imgflip.com/1v24a9.jpg" title="made at imgflip.com"/></a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
