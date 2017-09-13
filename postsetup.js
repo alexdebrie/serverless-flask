@@ -24,6 +24,20 @@ var questions = [
     message: 'Do you have Docker installed? Recommended, but not required.',
     default: true
   },
+  {
+    type: 'confirm',
+    name: 'wantsDomain',
+    message: 'Do you want to set up a custom domain? e.g. api.mycompany.com? Requires a domain in Route53.',
+    default: false
+  },
+  {
+    type: 'input',
+    name: 'domainName',
+    message: 'What is your domain name? e.g. api.mycompany.com',
+    when: function(answers) {
+      return answers.wantsDomain
+    }
+  },
 ]
 
 inquirer.prompt(questions).then(function (answers) {
@@ -31,6 +45,33 @@ inquirer.prompt(questions).then(function (answers) {
   var doc = YAML.safeLoad(fs.readFileSync('serverless.yml', 'utf8'));
   doc.custom.pythonRequirements.dockerizePip = answers.docker;
   doc.provider.runtime = answers.python;
-  fs.writeFileSync('serverless.yml', YAML.dump(doc));
+  if (answers.wantsDomain) {
+    doc.plugins.push('serverless-domain-manager');
+    doc.custom.customDomain = createCustomDomain(answers.domainName);
+  }
+  saveServerlessYml(doc);
   console.log(chalk.yellow("All set! Run `sls deploy` to send your code to the cloud"));
+  if (answers.wantsDomain) {
+    console.log(chalk.yellow("Run `sls create_domain` to set up your custom domain."))
+  }
 });
+
+const createCustomDomain = (domainName) => {
+  return {
+    domainName,
+    basePath: '',
+    stage: '${self:provider.stage}',
+    createRoute53Record: true
+  }
+}
+
+const saveServerlessYml = (config) => {
+  /*
+  When dumping to yml, it puts quotation marks around Serverless variables. This
+  breaks variable resolution, so I clean it out after dumping to yml but before
+  writing to the config file.
+  */
+  const dumped = YAML.dump(config);
+  const cleaned = dumped.replace("\'${self:provider.stage}\'", "${self:provider.stage}")
+  fs.writeFileSync('serverless.yml', cleaned);
+}

@@ -8,6 +8,7 @@ The fastest way to a Flask application with [Serverless](https://github.com/serv
 $ npm install -g serverless
 $ serverless install --url https://github.com/alexdebrie/serverless-flask --name my-flask-app
 $ cd my-flask-app && npm run setup
+<answer prompts>
 $ serverless deploy
 ```
 
@@ -44,3 +45,12 @@ sls wsgi serve
 ```
 
 Navigate to [localhost:5000](http://localhost:5000) to see your app running locally.
+
+## Configuration
+
+The `postsetup.js` prompt will walk you through some setup questions that may be
+custom to your use case. This includes:
+
+- Python runtime version;
+- Whether you have Docker setup, which assists in packaging dependencies. For more info, check out [this post on managing your Python packages with Serverless](https://serverless.com/blog/serverless-python-packaging/);
+- Whether you want to set up a custom domain that you own, rather than a random assigned one from AWS. For more details on that, look at [this post on setting up a custom domain with API Gateway and Serverless](https://serverless.com/blog/serverless-api-gateway-domain/).
