@@ -26,7 +26,7 @@ from api import index
 @app.route("/")
 def main():
     """Index page."""
-    return redirect('/swagger-ui/')
+    return redirect(url_for('flask-apispec.swagger-ui'))
 
 
 docs.register_existing_resources()

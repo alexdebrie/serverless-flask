@@ -4,7 +4,7 @@
 The fastest way to a Flask application with [Serverless](https://github.com/serverless/serverless).
 
 This version includes APISpec and Marshmallow for easy declaration of input and output for API functions
-and automatic generation of swagger.
+and automatic generation of swagger. CORS is enabled and can be customized.
 
 ## Usage
 
@@ -48,11 +48,10 @@ sls wsgi serve
  * Debugger is active!
 ```
 
-Navigate to [localhost:5000](http://localhost:5000) to see your app running locally.
+Navigate to [localhost:5000](http://localhost:5000) to see swagger UI for your API.
 
 ## Configuration
 
 The `postsetup.js` prompt will walk you through some setup questions that may be
 custom to your use case. This includes:
-
 - Whether you want to set up a custom domain that you own, rather than a random assigned one from AWS. For more details on that, look at [this post on setting up a custom domain with API Gateway and Serverless](https://serverless.com/blog/serverless-api-gateway-domain/).
