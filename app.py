@@ -26,7 +26,7 @@ from api import index
 @app.route("/")
 def main():
     """Index page."""
-    return redirect(url_for('api_index', name="mischa"))
+    return redirect('/swagger-ui/')
 
 
 docs.register_existing_resources()
