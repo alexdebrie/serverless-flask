@@ -28,7 +28,7 @@ var questions = [
 inquirer.prompt(questions).then(function (answers) {
 
   var doc = YAML.safeLoad(fs.readFileSync('serverless.yml', 'utf8'));
-  doc.custom.pythonRequirements.dockerizePip = False;
+  doc.custom.pythonRequirements.dockerizePip = false;
   doc.provider.runtime = 'python3.6';
   if (answers.wantsDomain) {
     doc.plugins.push('serverless-domain-manager');
