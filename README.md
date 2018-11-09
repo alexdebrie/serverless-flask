@@ -1,6 +1,10 @@
 # Serverless-Flask
+### API edition.
 
 The fastest way to a Flask application with [Serverless](https://github.com/serverless/serverless).
+
+This version includes APISpec and Marshmallow for easy declaration of input and output for API functions
+and automatic generation of swagger.
 
 ## Usage
 
@@ -9,7 +13,7 @@ $ yarn global install serverless
 $ sls install --url https://github.com/revmischa/serverless-flask --name my-flask-app
 $ cd my-flask-app && yarn setup
 <answer prompts>
-$ serverless deploy
+$ sls deploy
 ```
 
 Once the deploy is complete, run `sls info` to get the endpoint:
@@ -19,8 +23,8 @@ $ sls info
 Service Information
 <snip>
 endpoints:
-  ANY - https://abc6defghi.execute-api.us-east-1.amazonaws.com/dev <-- Endpoint
-  ANY - https://abc6defghi.execute-api.us-east-1.amazonaws.com/dev/{proxy+}
+  ANY - https://abc6defghi.execute-api.eu-central-1.amazonaws.com/dev <-- Endpoint
+  ANY - https://abc6defghi.execute-api.eu-central-1.amazonaws.com/dev/{proxy+}
 ```
 
 Copy paste into your browser, and _voila_!
@@ -51,6 +55,4 @@ Navigate to [localhost:5000](http://localhost:5000) to see your app running loca
 The `postsetup.js` prompt will walk you through some setup questions that may be
 custom to your use case. This includes:
 
-- Python runtime version;
-- Whether you have Docker setup, which assists in packaging dependencies. For more info, check out [this post on managing your Python packages with Serverless](https://serverless.com/blog/serverless-python-packaging/);
 - Whether you want to set up a custom domain that you own, rather than a random assigned one from AWS. For more details on that, look at [this post on setting up a custom domain with API Gateway and Serverless](https://serverless.com/blog/serverless-api-gateway-domain/).

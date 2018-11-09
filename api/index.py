@@ -8,7 +8,7 @@ class IndexSchema(Schema):
 
 
 @app.route('/api/', methods=['POST'])
-@use_kwargs(IndexSchema)
+@use_kwargs(IndexSchema(strict=True))
 @marshal_with(IndexSchema)
 def api_index(name: str = None):
     """Main API endpoint."""
