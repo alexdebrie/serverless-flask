@@ -3,7 +3,6 @@ service: serverless-flask
 plugins:
   - serverless-python-requirements
   - serverless-wsgi
-  - serverless-domain-manager
 
 custom:
   wsgi:

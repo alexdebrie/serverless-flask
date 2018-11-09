@@ -1,10 +1,11 @@
 from flask_apispec import use_kwargs, marshal_with
 from marshmallow import Schema, fields
 from app import app
+from typing import Optional
 
 
 class IndexSchema(Schema):
-    name = fields.Str(required=False)
+    name: Optional[str] = fields.Str(required=False)
 
 
 @app.route('/api/', methods=['POST'])
