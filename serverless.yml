@@ -3,6 +3,7 @@ service: serverless-flask
 plugins:
   - serverless-python-requirements
   - serverless-wsgi
+  - serverless-domain-manager
 
 custom:
   wsgi:
@@ -18,9 +19,9 @@ package:
 
 provider:
   name: aws
-  runtime: python2.7
+  runtime: python3.6
   stage: dev
-  region: us-east-1
+  region: eu-central-1
 
 functions:
   app:
