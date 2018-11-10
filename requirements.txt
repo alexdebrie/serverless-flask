@@ -2,5 +2,6 @@ Flask
 flask_cors
 boto3
 flask_apispec
+git+https://github.com/revmischa/flask-apispec.git@2fff3d58788f4558f67107c79b22f8566b3c2936#egg=flask_apispec
 apispec
 marshmallow
