@@ -57,8 +57,10 @@ Navigate to [localhost:5000](http://localhost:5000) to see swagger UI for your A
 Want to generate a client library for your API? No problem.
 
 * Run `make generate-client lang=$LANG`
+
 Where `LANG` can be any language supported by [OpenAPI-Generator](https://github.com/openapitools/openapi-generator#overview).
-E.g. `go` or `typescript-axios`.
+
+e.g. `lang=go` or `lang=typescript-axios`.
 
 
 ## Configuration
