@@ -58,7 +58,7 @@ Want to generate a client library for your API? No problem.
 
 * Run `make generate-client lang=$LANG`
 
-Where `LANG` can be any language supported by [OpenAPI-Generator](https://github.com/openapitools/openapi-generator#overview).
+Where `$LANG` can be any language supported by [OpenAPI-Generator](https://github.com/openapitools/openapi-generator#overview).
 
 e.g. `lang=go` or `lang=typescript-axios`.
 
