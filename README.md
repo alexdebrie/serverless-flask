@@ -7,7 +7,7 @@ This version includes APISpec and Marshmallow for easy declaration of input and 
 and automatic generation of swagger. CORS is enabled and can be customized.
 
 ## Usage
-
+* [Install yarn](https://yarnpkg.com/lang/en/docs/install/#mac-stable) if you don't have it
 ```
 yarn global install serverless
 sls install --url https://github.com/revmischa/serverless-flask --name my-flask-app
