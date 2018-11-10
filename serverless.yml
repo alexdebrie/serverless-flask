@@ -28,3 +28,7 @@ functions:
     events:
       - http: ANY /
       - http: 'ANY {proxy+}'
+  openapi:
+    handler: api.doc.get_openapi
+    events:
+      - http: GET /openapi

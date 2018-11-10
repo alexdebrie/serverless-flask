@@ -9,11 +9,12 @@ and automatic generation of swagger. CORS is enabled and can be customized.
 ## Usage
 
 ```
-$ yarn global install serverless
-$ sls install --url https://github.com/revmischa/serverless-flask --name my-flask-app
-$ cd my-flask-app && yarn setup
-<answer prompts>
-$ sls deploy
+yarn global install serverless
+sls install --url https://github.com/revmischa/serverless-flask --name my-flask-app
+cd my-flask-app
+yarn setup
+# <answer prompts>
+sls deploy
 ```
 
 Once the deploy is complete, run `sls info` to get the endpoint:
@@ -49,6 +50,16 @@ sls wsgi serve
 ```
 
 Navigate to [localhost:5000](http://localhost:5000) to see swagger UI for your API.
+
+
+## Client CodeGen
+
+Want to generate a client library for your API? No problem.
+
+* Run `make generate-client lang=$LANG`
+Where `LANG` can be any language supported by [OpenAPI-Generator](https://github.com/openapitools/openapi-generator#overview).
+E.g. `go` or `typescript-axios`.
+
 
 ## Configuration
 

@@ -103,3 +103,8 @@ ENV/
 # serverless
 .serverless/
 .requirements/
+
+# codegen
+sdk/
+
+node_modules/
