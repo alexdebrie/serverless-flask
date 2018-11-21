@@ -1,4 +1,4 @@
-// Check to see if the user has Docker installed and which version of Python they prefer.
+// Check to see if the user has Docker installed
 
 'use strict';
 var inquirer = require('inquirer');
@@ -9,6 +9,12 @@ var fs = require('fs');
 console.log(chalk.yellow('Hi, a few quick questions before we start:'));
 
 var questions = [
+  {
+    type: 'confirm',
+    name: 'docker',
+    message: 'Do you have Docker installed? Recommended, but not required.',
+    default: true
+  },
   {
     type: 'confirm',
     name: 'wantsDomain',
@@ -28,8 +34,7 @@ var questions = [
 inquirer.prompt(questions).then(function (answers) {
 
   var doc = YAML.safeLoad(fs.readFileSync('serverless.yml', 'utf8'));
-  doc.custom.pythonRequirements.dockerizePip = false;
-  doc.provider.runtime = 'python3.6';
+  doc.custom.pythonRequirements.dockerizePip = answers.docker;
   if (answers.wantsDomain) {
     doc.plugins.push('serverless-domain-manager');
     doc.custom.customDomain = createCustomDomain(answers.domainName);
