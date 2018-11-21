@@ -67,4 +67,5 @@ e.g. `lang=go` or `lang=typescript-axios`.
 
 The `postsetup.js` prompt will walk you through some setup questions that may be
 custom to your use case. This includes:
+- Whether you have Docker setup, which assists in packaging dependencies. For more info, check out [this post on managing your Python packages with Serverless](https://serverless.com/blog/serverless-python-packaging/);
 - Whether you want to set up a custom domain that you own, rather than a random assigned one from AWS. For more details on that, look at [this post on setting up a custom domain with API Gateway and Serverless](https://serverless.com/blog/serverless-api-gateway-domain/).
