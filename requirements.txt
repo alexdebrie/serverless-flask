@@ -1,7 +1,8 @@
 Flask
 flask_cors
 boto3
-flask_apispec
+# flask_apispec
+# use fixed SERVER_NAME https://github.com/revmischa/flask-apispec/commits/script_root
 git+https://github.com/revmischa/flask-apispec.git@7cf50d33189873f498b4474610e32896247a1260#egg=flask_apispec
 apispec
 marshmallow
