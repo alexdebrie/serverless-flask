@@ -18,9 +18,9 @@ package:
 
 provider:
   name: aws
-  runtime: python2.7
+  runtime: python3.6
   stage: dev
-  region: us-east-1
+  region: eu-central-1
 
 functions:
   app:
@@ -28,3 +28,7 @@ functions:
     events:
       - http: ANY /
       - http: 'ANY {proxy+}'
+  openapi:
+    handler: api.doc.get_openapi
+    events:
+      - http: GET /openapi
